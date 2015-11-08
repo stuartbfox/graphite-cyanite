@@ -114,7 +114,7 @@ class CyaniteFinder(object):
     def find_nodes(self, query):
         paths = requests.get(urls.paths,
                              params={'query': query.pattern}).json()
-        paths = truncate_nodes(query.pattern, paths)
+        #paths = truncate_nodes(query.pattern, paths)
         for path in paths:
             if path['leaf']:
                 yield CyaniteLeafNode(path['path'],
